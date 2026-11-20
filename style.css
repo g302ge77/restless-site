@@ -57,3 +57,11 @@ footer {
 .compare thead th { font-size: 14px; color: var(--muted); font-weight: 600; }
 .compare thead th:last-child { color: var(--accent); }
 .compare tbody th { font-weight: 600; width: 26%; }
+
+/* Phones: each row label sits full width above its two answers. */
+@media (max-width: 560px) {
+  .compare thead tr, .compare tbody tr { display: grid; grid-template-columns: 1fr 1fr; column-gap: 12px; }
+  .compare thead th:first-child { display: none; }
+  .compare tbody th { grid-column: 1 / -1; width: auto; border-bottom: none; padding: 14px 0 0; color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .compare th, .compare td { padding-left: 0; padding-right: 0; }
+}
